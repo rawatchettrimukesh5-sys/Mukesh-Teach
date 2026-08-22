@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mukesh Teach</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #061b5c, #1769aa);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111827;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            padding: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #4fc3f7;
+        }
+
+        /* Main */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #123b78;
+        }
+
+        /* Classes */
+        .classes {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .class-button {
+            background: #e8eef9;
+            border: none;
+            padding: 20px 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .class-button:hover {
+            background: #1769aa;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Class content */
+        .class-content {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: #f5f8ff;
+            border-left: 5px solid #1769aa;
+            border-radius: 8px;
+        }
+
+        .class-content h3 {
+            color: #123b78;
+            margin-bottom: 12px;
+        }
+
+        .class-content ul {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact-info {
+            line-height: 2;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .classes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Mukesh Teach</h1>
+        <p>Computer Science Teacher | Classes 3–7</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('classes')">Classes</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <main>
+
+        <!-- Home -->
+        <section id="home">
+            <h2>Welcome</h2>
+
+            <p>
+                Welcome to Mukesh Teach.
+                Learn Computer Science in a simple, clear and interesting way.
+            </p>
+
+            <br>
+
+            <p>
+                Select your class below to explore your lessons.
+            </p>
+        </section>
+
+
+        <!-- Classes -->
+        <section id="classes">
+
+            <h2>My Classes</h2>
+
+            <div class="classes">
+
+                <button class="class-button" onclick="openClass(3)">
+                    Class 3
+                </button>
+
+                <button class="class-button" onclick="openClass(4)">
+                    Class 4
+                </button>
+
+                <button class="class-button" onclick="openClass(5)">
+                    Class 5
+                </button>
+
+                <button class="class-button" onclick="openClass(6)">
+                    Class 6
+                </button>
+
+                <button class="class-button" onclick="openClass(7)">
+                    Class 7
+                </button>
+
+            </div>
+
+
+            <!-- Class 3 -->
+            <div id="class3" class="class-content">
+
+                <h3>Class 3 Computer Science</h3>
+
+                <p>Topics for Class 3:</p>
+
+                <ul>
+                    <li>Introduction to Computers</li>
+                    <li>Parts of a Computer</li>
+                    <li>Keyboard and Mouse</li>
+                    <li>Basic Computer Operations</li>
+                    <li>Computer Safety</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Class 4 -->
+            <div id="class4" class="class-content">
+
+                <h3>Class 4 Computer Science</h3>
+
+                <p>Topics for Class 4:</p>
+
+                <ul>
+                    <li>Computer Hardware</li>
+                    <li>Computer Software</li>
+                    <li>Input and Output Devices</li>
+                    <li>Files and Folders</li>
+                    <li>Introduction to the Internet</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Class 5 -->
+            <div id="class5" class="class-content">
+
+                <h3>Class 5 Computer Science</h3>
+
+                <p>Topics for Class 5:</p>
+
+                <ul>
+                    <li>Operating Systems</li>
+                    <li>Word Processing</li>
+                    <li>Internet Basics</li>
+                    <li>Email</li>
+                    <li>Computer Security</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Class 6 -->
+            <div id="class6" class="class-content">
+
+                <h3>Class 6 Computer Science</h3>
+
+                <p>Topics for Class 6:</p>
+
+                <ul>
+                    <li>Advanced Computer Concepts</li>
+                    <li>Microsoft Office</li>
+                    <li>Internet and Web Browsing</li>
+                    <li>Programming Basics</li>
+                    <li>Cyber Safety</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Class 7 -->
+            <div id="class7" class="class-content">
+
+                <h3>Class 7 Computer Science</h3>
+
+                <p>Topics for Class 7:</p>
+
+                <ul>
+                    <li>Computer Networks</li>
+                    <li>HTML Basics</li>
+                    <li>Introduction to Programming</li>
+                    <li>Database Basics</li>
+                    <li>Cyber Security</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section id="about">
+
+            <h2>About Mukesh Teach</h2>
+
+            <p>
+                Mukesh Teach is an educational website created to help
+                students learn Computer Science easily.
+            </p>
+
+            <br>
+
+            <p>
+                The website provides simple learning materials and
+                class-wise topics for students from Class 3 to Class 7.
+            </p>
+
+        </section>
+
+
+        <!-- Contact -->
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <div class="contact-info">
+
+                <p><strong>Teacher:</strong> Mukesh</p>
+
+                <p><strong>Subject:</strong> Computer Science</p>
+
+                <p><strong>Classes:</strong> 3–7</p>
+
+                <p><strong>School:</strong> N/A</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Mukesh Teach | Computer Science</p>
+
+    </footer>
+
+
+    <script>
+
+        /* Navigation */
+
+        function showSection(sectionId) {
+
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* Open Class */
+
+        function openClass(classNumber) {
+
+            // Hide all class contents
+
+            let allClasses =
+                document.querySelectorAll(".class-content");
+
+            allClasses.forEach(function(classBox) {
+
+                classBox.style.display = "none";
+
+            });
+
+
+            // Show selected class
+
+            let selectedClass =
+                document.getElementById("class" + classNumber);
+
+            selectedClass.style.display = "block";
+
+
+            // Scroll to selected class
+
+            selectedClass.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
