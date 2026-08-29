@@ -1,986 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mukesh Teach | Computer Science</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
+<title>Mukesh Teach</title>
 <style>
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
-    color: white;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+    body {
+    background-image: url("skull-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-
-/* ================= BACKGROUND ================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
-        url("skull-bg.jpeg") center/cover no-repeat;
-    z-index: -2;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(
-        circle at center,
-        transparent 20%,
-        rgba(0,0,0,0.65) 100%
-    );
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-/* ================= NAVBAR ================= */
-
-.navbar {
-    width: calc(100% - 60px);
-    max-width: 1480px;
-    margin: 25px auto 0;
-    padding: 14px 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 15px;
-
-    background: rgba(5,5,5,0.65);
-    backdrop-filter: blur(15px);
-
-    position: sticky;
-    top: 15px;
-    z-index: 100;
-}
-
-
-/* Logo */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.logo-skull {
-    width: 48px;
-    height: 48px;
-
-    background: url("skull-bg.jpeg") center/cover;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 28px;
-}
-
-.logo-text {
-    font-size: 23px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.logo-text span {
-    color: #ffc400;
-}
-
-
-/* Navigation links */
-
-.nav-links {
-    display: flex;
-    gap: 42px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
+a {
+    color: inherit;
     text-decoration: none;
-    font-size: 16px;
-    position: relative;
-    transition: 0.3s;
 }
-
-.nav-links a:hover {
-    color: #ffc400;
-}
-
-.nav-links a.active {
-    color: #ffc400;
-}
-
-.nav-links a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -10px;
-    height: 2px;
-    background: #ffc400;
-}
-
-
-/* Resources button */
-
-.resource-btn {
-    padding: 13px 22px;
-
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 9px;
-
-    color: white;
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.resource-btn:hover {
-    border-color: #ffc400;
-    color: #ffc400;
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-    min-height: 575px;
-
-    max-width: 1200px;
-    margin: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    header {
+    padding: 30px 20px;
     text-align: center;
-
-    padding: 70px 20px 80px;
+    background: rgba(0,0,0,0.65);
+    border-bottom: 1px solid #333;
 }
 
-
-.hero h1 {
-    font-size: clamp(55px, 8vw, 115px);
-
-    font-weight: 900;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.2),
-        0 0 35px rgba(255,196,0,0.15);
-
-    margin-bottom: 20px;
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.hero h1 span {
-    color: #ffc400;
-}
-
-
-.hero-line {
-    width: 230px;
-    height: 2px;
-
-    background: #ffc400;
-
-    margin: 5px auto 25px;
-
-    position: relative;
-}
-
-.hero-line::after {
-    content: "◆";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    background: #050505;
-
-    color: #ffc400;
-
-    padding: 0 12px;
-
-    font-size: 15px;
-}
-
-
-.hero-subtitle {
-    font-size: 21px;
-    letter-spacing: 6px;
-    margin-bottom: 18px;
-}
-
-
-.hero-description {
-    color: #ccc;
-    max-width: 650px;
-
-    line-height: 1.7;
-
+header p {
     font-size: 17px;
 }
-
-
-.hero-buttons {
+    nav {
+    background: #111;
     display: flex;
-    gap: 18px;
-
-    margin-top: 35px;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-
-.btn {
-    padding: 16px 30px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
-    text-decoration: none;
-
+nav a {
+    color: white;
     font-weight: bold;
-
-    transition: 0.3s;
-
     cursor: pointer;
 }
 
-
-.btn-primary {
-    background: #ffc400;
-    color: #050505;
+nav a:hover {
+    color: #ffc400;
+}
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
 }
 
-.btn-primary:hover {
-    background: #fff;
-    transform: translateY(-3px);
+section {
+    background: rgba(0,0,0,0.78);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
 }
 
+section h2 {
+    margin-bottom: 15px;
+    color: #ffc400;
+}
+    .classes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
 
-.btn-secondary {
-    border: 1px solid #ffc400;
+.class-button {
+    background: #111;
     color: white;
-    background: rgba(0,0,0,0.35);
+    border: 1px solid #333;
+    padding: 18px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.btn-secondary:hover {
+.class-button:hover {
     background: #ffc400;
     color: #000;
     transform: translateY(-3px);
 }
-
-
-/* ================= SECTIONS ================= */
-
-.section {
-    max-width: 1250px;
-
-    margin: 0 auto;
-
-    padding: 70px 25px;
+    .class-content {
+    display: none;
+    margin-top: 20px;
+    padding: 22px;
+    background: rgba(15,15,15,0.95);
+    border-left: 4px solid #ffc400;
+    border-radius: 8px;
 }
 
-
-.section-title {
-    text-align: center;
-
-    font-size: 32px;
-
-    margin-bottom: 45px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-}
-
-
-.section-title span {
+.class-content h3 {
     color: #ffc400;
+    margin-bottom: 12px;
 }
 
-
-.section-title::after {
-    content: "";
-
-    display: block;
-
-    width: 100px;
-    height: 3px;
-
-    background: #ffc400;
-
-    margin: 15px auto 0;
-}
-
-
-/* ================= CLASS CARDS ================= */
-
-.classes-grid {
-    display: grid;
-
-    grid-template-columns: repeat(5, 1fr);
-
-    gap: 25px;
-}
-
-
-.class-card {
-    background: rgba(10,10,10,0.72);
-
-    border: 1px solid rgba(255,255,255,0.18);
-
-    border-radius: 14px;
-
-    padding: 30px 18px 20px;
-
-    text-align: center;
-
-    min-height: 245px;
-
-    transition: 0.35s;
-
-    backdrop-filter: blur(8px);
-}
-
-
-.class-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #ffc400;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,0.6),
-        0 0 20px rgba(255,196,0,0.12);
-}
-
-
-.class-icon {
-    font-size: 55px;
-
-    margin-bottom: 18px;
-}
-
-
-.class-card:nth-child(1) .class-icon {
-    color: #42d878;
-}
-
-.class-card:nth-child(2) .class-icon {
-    color: #3695ff;
-}
-
-.class-card:nth-child(3) .class-icon {
-    color: #ffc400;
-}
-
-.class-card:nth-child(4) .class-icon {
-    color: #9b59ff;
-}
-
-.class-card:nth-child(5) .class-icon {
-    color: #ff5555;
-}
-
-
-.class-card h3 {
-    font-size: 21px;
-
-    margin-bottom: 8px;
-}
-
-
-.class-card p {
-    color: #aaa;
-
-    margin-bottom: 22px;
-}
-
-
-.pdf-btn {
-    display: block;
-
-    padding: 11px;
-
-    border-radius: 7px;
-
-    border: 1px solid rgba(255,255,255,0.25);
-
-    color: white;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-
-    font-size: 14px;
-}
-
-
-.pdf-btn:hover {
-    border-color: #ffc400;
-
-    color: #ffc400;
-}
-
-
-/* ================= ABOUT ================= */
-
-.about-box {
-    max-width: 900px;
-
-    margin: auto;
-
-    text-align: center;
-
-    background: rgba(10,10,10,0.72);
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    border-radius: 15px;
-
-    padding: 45px 30px;
-
-    backdrop-filter: blur(10px);
-}
-
-
-.about-box p {
-    color: #ccc;
-
+.class-content ul {
+    margin-left: 22px;
     line-height: 1.8;
-
-    font-size: 17px;
-
-    margin-bottom: 15px;
 }
 
-
-/* ================= CONTACT ================= */
-
-.contact-box {
-    max-width: 600px;
-
-    margin: auto;
-
-    background: rgba(10,10,10,0.75);
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    border-radius: 15px;
-
-    padding: 35px;
-
-    text-align: center;
-}
-
-
-.contact-box p {
-    margin: 15px 0;
-
-    color: #ddd;
-}
-
-
-.contact-box strong {
+.class-content a {
     color: #ffc400;
 }
-
-
-/* ================= FOOTER ================= */
-
-footer {
-    border-top: 1px solid rgba(255,255,255,0.12);
-
-    background: rgba(0,0,0,0.85);
-
-    text-align: center;
-
-    padding: 28px 15px;
-
-    color: #888;
+    .contact-info {
+    line-height: 2;
 }
 
+.contact-info strong {
+    color: #ffc400;
+}
+    footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+}
 
 footer span {
     color: #ffc400;
 }
+    @media (max-width: 700px) {
 
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 1000px) {
-
-    .classes-grid {
-        grid-template-columns: repeat(3, 1fr);
+    header h1 {
+        font-size: 32px;
     }
 
-    .nav-links {
-        gap: 20px;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .navbar {
-        width: calc(100% - 25px);
-
-        margin-top: 12px;
-
-        padding: 12px 14px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
+    nav {
         gap: 15px;
-    }
-
-
-    .logo {
-        width: 100%;
-
-        justify-content: center;
-    }
-
-
-    .nav-links {
-        width: 100%;
-
-        justify-content: center;
-
-        gap: 20px;
-
         flex-wrap: wrap;
     }
 
-
-    .nav-links a {
-        font-size: 14px;
-    }
-
-
-    .resource-btn {
-        display: none;
-    }
-
-
-    .hero {
-        min-height: 520px;
-
-        padding-top: 60px;
-    }
-
-
-    .hero h1 {
-        font-size: 52px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .hero-subtitle {
-        font-size: 16px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-
-    .hero-buttons {
-        flex-direction: column;
-
-        width: 80%;
-    }
-
-
-    .btn {
-        width: 100%;
-    }
-
-
-    .classes-grid {
+    .classes {
         grid-template-columns: repeat(2, 1fr);
-
-        gap: 15px;
     }
 
-
-    .class-card {
-        padding: 25px 10px 15px;
-
-        min-height: 220px;
-    }
-
-
-    .class-icon {
-        font-size: 42px;
-    }
-
-
-    .class-card h3 {
-        font-size: 18px;
-    }
-
-
-    .pdf-btn {
-        font-size: 12px;
-    }
-
-
-    .section {
-        padding: 55px 15px;
-    }
-
-
-    .section-title {
-        font-size: 25px;
+    section {
+        padding: 20px;
     }
 
 }
+    </style>
 
-
-@media (max-width: 420px) {
-
-    .classes-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-}
-
-</style>
 </head>
-
 
 <body>
 
+<header>
 
-<!-- ================= NAVIGATION ================= -->
+<h1>
+MUKESH <span>TEACH</span>
+</h1>
 
-<nav class="navbar">
+<p>
+Computer Science Teacher | Classes 3–7
+</p>
 
-    <div class="logo">
+</header>
+<nav>
 
-        <div class="logo-skull">
-            💀
-        </div>
+<a href="#home">Home</a>
 
-        <div class="logo-text">
-            MUKESH <span>TEACH</span>
-        </div>
+<a href="#classes">Classes</a>
 
-    </div>
+<a href="#about">About</a>
 
-
-    <div class="nav-links">
-
-        <a href="#home" class="active">Home</a>
-
-        <a href="#classes">Notes</a>
-
-        <a href="#classes">Syllabus</a>
-
-        <a href="#about">About Me</a>
-
-        <a href="#contact">Contact</a>
-
-    </div>
-
-
-    <a href="#classes" class="resource-btn">
-        ↓ &nbsp; Resources
-    </a>
+<a href="#contact">Contact</a>
 
 </nav>
 
+<main>
 
+<section id="home">
 
-<!-- ================= HERO ================= -->
+<h2>Welcome</h2>
 
-<section class="hero" id="home">
-
-    <h1>
-        MUKESH <span>TEACH</span>
-    </h1>
-
-
-    <div class="hero-line"></div>
-
-
-    <div class="hero-subtitle">
-        CLASS 3 TO 7 COMPUTER NOTES
-    </div>
-
-
-    <p class="hero-description">
-
-        Free and easy to understand computer notes
-        for Class 3 to 7. Download PDF and study smart.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-        <a href="#classes" class="btn btn-primary">
-            📖 &nbsp; Browse Notes
-        </a>
-
-        <a href="#about" class="btn btn-secondary">
-            ⓘ &nbsp; About Me
-        </a>
-
-    </div>
+<p>
+Welcome to Mukesh Teach.
+Learn Computer Science in a simple,
+clear and interesting way.
+</p>
 
 </section>
+<section id="classes">
 
+<h2>My Classes</h2>
 
+<div class="classes">
 
-<!-- ================= CLASSES ================= -->
+<button class="class-button"
+onclick="openClass(3)">
+Class 3
+</button>
 
-<section class="section" id="classes">
+<button class="class-button"
+onclick="openClass(4)">
+Class 4
+</button>
 
-    <h2 class="section-title">
-        NOTES <span>BY CLASS</span>
-    </h2>
+<button class="class-button"
+onclick="openClass(5)">
+Class 5
+</button>
 
+<button class="class-button"
+onclick="openClass(6)">
+Class 6
+</button>
 
-    <div class="classes-grid">
+<button class="class-button"
+onclick="openClass(7)">
+Class 7
+</button>
 
+</div>
+<div id="class3"
+class="class-content">
 
-        <!-- CLASS 3 -->
+<h3>Class 3 Computer Science</h3>
 
-        <div class="class-card">
+<p>Topics for Class 3:</p>
 
-            <div class="class-icon">
-                🖥
-            </div>
+<ul>
 
-            <h3>Class 3</h3>
+<li>Introduction to Computers</li>
 
-            <p>Computer Notes</p>
+<li>Types of a Computer</li>
 
-            <a
-                href="Types%20of%20Computer.pdf"
-                target="_blank"
-                class="pdf-btn">
+<li>Keyboard and Mouse</li>
 
-                📄 &nbsp; Download PDF
+<li>Basic Computer Operations</li>
 
-            </a>
+<li>Computer Safety</li>
 
-        </div>
+</ul>
 
+<h4>Chapter 1: Types of Computer</h4>
 
+<a href="Types%20of%20Computer.pdf"
+target="_blank">
 
-        <!-- CLASS 4 -->
+Open Types of Computer
 
-        <div class="class-card">
+</a>
 
-            <div class="class-icon">
-                🖥
-            </div>
+</div>
+<div id="class4"
+class="class-content">
 
-            <h3>Class 4</h3>
+<h3>Class 4 Computer Science</h3>
 
-            <p>Computer Notes</p>
+<p>Topics for Class 4:</p>
 
-            <a href="#" class="pdf-btn">
-                📄 &nbsp; Coming Soon
-            </a>
+<ul>
 
-        </div>
+<li>Computer Hardware</li>
 
+<li>Computer Software</li>
 
+<li>Input and Output Devices</li>
 
-        <!-- CLASS 5 -->
+<li>Files and Folders</li>
 
-        <div class="class-card">
+<li>Introduction to the Internet</li>
 
-            <div class="class-icon">
-                🖥
-            </div>
+</ul>
 
-            <h3>Class 5</h3>
+</div>
+<div id="class5"
+class="class-content">
 
-            <p>Computer Notes</p>
+<h3>Class 5 Computer Science</h3>
 
-            <a href="#" class="pdf-btn">
-                📄 &nbsp; Coming Soon
-            </a>
+<p>Topics for Class 5:</p>
 
-        </div>
+<ul>
 
+<li>Operating Systems</li>
 
+<li>Word Processing</li>
 
-        <!-- CLASS 6 -->
+<li>Internet Basics</li>
 
-        <div class="class-card">
+<li>Email</li>
 
-            <div class="class-icon">
-                🖥
-            </div>
+<li>Computer Security</li>
 
-            <h3>Class 6</h3>
+</ul>
 
-            <p>Computer Notes</p>
+</div>
+<div id="class6"
+class="class-content">
 
-            <a
-                href="COMMUNICATION%20AND%20INTERNET-CLASS-6.pdf"
-                target="_blank"
-                class="pdf-btn">
+<h3>Class 6 Computer Science</h3>
 
-                📄 &nbsp; Download PDF
+<p>Topics for Class 6:</p>
 
-            </a>
+<ul>
 
-        </div>
+<li>Introduction to Computer</li>
 
+<li>Concept of Computer Hardware</li>
 
+<li>Memory of Computer</li>
 
-        <!-- CLASS 7 -->
+<li>Introduction to Software</li>
 
-        <div class="class-card">
+<li>Concept of Operating System</li>
 
-            <div class="class-icon">
-                🖥
-            </div>
+<li>Introduction to Word Processing</li>
 
-            <h3>Class 7</h3>
+<li>Introduction to Spreadsheet</li>
 
-            <p>Computer Notes</p>
+<li>Introduction to Presentation Software</li>
 
-            <a
-                href="COMPUTER%20NETWORK-CLASS-7.pdf"
-                target="_blank"
-                class="pdf-btn">
+<li>ICT and its Uses</li>
 
-                📄 &nbsp; Download PDF
+<li>
+<a href="COMMUNICATION%20AND%20INTERNET-CLASS-6.pdf?v=2"
+target="_blank">
+Communication and Internet
+</a>
+</li>
 
-            </a>
+<li>Concept of WWW and Web Page</li>
 
-        </div>
+<li>Computer Ethics and Computer Virus</li>
 
+<li>Computer Graphics (Ms-Paint)</li>
 
-    </div>
+<li>Concept of Multimedia</li>
+
+<li>Algorithm and Flowchart</li>
+
+<li>Computer Programming</li>
+
+</ul>
+
+</div>
+<div id="class7"
+class="class-content">
+
+<h3>Class 7 Computer Science</h3>
+
+<p>Topics for Class 7:</p>
+
+<ul>
+
+<li>Fundamental Knowledge of Computer</li>
+
+<li>Brief History of Computer</li>
+
+<li>Generations of Computer</li>
+
+<li>Types of Computer</li>
+
+<li>Computer Software</li>
+
+<li>Operating System</li>
+
+<li>
+<a href="COMPUTER%20NETWORK-CLASS-7.pdf"
+target="_blank">
+Computer Network
+</a>
+</li>
+
+<li>
+<a href="INTERNET%20AND%20E-MAIL-CLASS-7.pdf"
+target="_blank">
+INTERNET AND E-MAIL
+</a>
+</li>
+
+<li>Number System</li>
+
+<li>Cyber Crimes and Ethics</li>
+
+<li>Computer Virus</li>
+
+<li>Multimedia</li>
+
+</ul>
+
+</div>
+<li>Computer Graphics</li>
+
+<li>Photo Editing Software</li>
+
+<li>Page Layout Software</li>
+
+<li>Concept of Programming Languages</li>
+
+<li>Algorithm and Flowchart</li>
+
+<li>Introduction to QBASIC</li>
+
+<li>Programming in QBASIC</li>
+
+<li>Markup Language and HTML</li>
+
+<li>Contemporary Technology</li>
+
+</ul>
+
+</div>
 
 </section>
+<section id="about">
 
+<h2>About Mukesh Teach</h2>
 
+<div class="about-box">
 
-<!-- ================= ABOUT ================= -->
+<h3>Mukesh Teach</h3>
 
-<section class="section" id="about">
+<p>
+Mukesh Teach is an educational website
+created to help students learn
+Computer Science easily.
+</p>
 
-    <h2 class="section-title">
-        ABOUT <span>ME</span>
-    </h2>
+<br>
 
+<p>
+The website provides simple learning
+materials and class-wise topics for
+students from Class 3 to Class 7.
+</p>
 
-    <div class="about-box">
-
-        <p>
-            Welcome to <strong>Mukesh Teach</strong>.
-        </p>
-
-        <p>
-            I created this website to help students learn
-            Computer Science in a simple, clear and interesting way.
-        </p>
-
-        <p>
-            Here you can find class-wise computer notes,
-            study materials and PDF resources for students
-            from Class 3 to Class 7.
-        </p>
-
-    </div>
+</div>
 
 </section>
+<section id="contact">
 
+<h2>Contact</h2>
 
+<div class="contact-info">
 
-<!-- ================= CONTACT ================= -->
+<p>
+<strong>Teacher:</strong> Mukesh
+</p>
 
-<section class="section" id="contact">
+<p>
+<strong>Subject:</strong> Computer Science
+</p>
 
-    <h2 class="section-title">
-        CONTACT <span>ME</span>
-    </h2>
+<p>
+<strong>Classes:</strong> 3–7
+</p>
 
+<p>
+<strong>School:</strong> N/A
+</p>
 
-    <div class="contact-box">
-
-        <p>
-            <strong>Teacher:</strong> Mukesh
-        </p>
-
-        <p>
-            <strong>Subject:</strong> Computer Science
-        </p>
-
-        <p>
-            <strong>Classes:</strong> 3 – 7
-        </p>
-
-    </div>
+</div>
 
 </section>
-
-
-
-<!-- ================= FOOTER ================= -->
+</main>
 
 <footer>
 
-    <p>
-        © 2026 <span>Mukesh Teach</span>
-        | Computer Science
-    </p>
+<p>
+© 2026 <span>Mukesh Teach</span>
+| Computer Science
+</p>
 
 </footer>
+<script>
 
+function openClass(classNumber) {
 
+    let allClasses =
+        document.querySelectorAll(".class-content");
+
+    allClasses.forEach(function(box) {
+
+        box.style.display = "none";
+
+    });
+
+    let selectedClass =
+        document.getElementById("class" + classNumber);
+
+    selectedClass.style.display = "block";
+
+    selectedClass.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+</script>
 
 </body>
+
 </html>
