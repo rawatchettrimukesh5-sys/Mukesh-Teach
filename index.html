@@ -468,26 +468,18 @@ students from Class 3 to Class 7.
 <script>
 
 function openClass(classNumber) {
+    const content = document.getElementById("class" + classNumber);
 
-    let allClasses =
-        document.querySelectorAll(".class-content");
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        return;
+    }
 
-    allClasses.forEach(function(box) {
-
-        box.style.display = "none";
-
+    document.querySelectorAll(".class-content").forEach(section => {
+        section.style.display = "none";
     });
 
-    let selectedClass =
-        document.getElementById("class" + classNumber);
-
-    selectedClass.style.display = "block";
-
-    selectedClass.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
+    content.style.display = "block";
 }
 
 </script>
